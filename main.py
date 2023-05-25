@@ -2,6 +2,12 @@ import random
 from datetime import date
 a = ''
 films = ['Мстители финал', 'Dungeons and Dragons. Честь среди воров', 'Стражи галактики', 'Красное уведомление', 'Бойцовский клуб']
+music_band = ['Imagine Dragons', 'Nirvana', 'Linkin park', 'Skillet', 'Limp Bizkit']
+songs_dragons = ['Believer', 'Bad liar', 'Roots']
+songs_nirvana = ['Smells Like Teen Spirit', 'Rape me', 'Lithium']
+songs_park = ['Breaking the Habit', 'Numb', 'Faint']
+songs_skillet = ["Monster", 'Finish line', 'Hero']
+songs_bizkit = ['Take a look around', 'My Way', 'Rolling']
 while a != "Стоп" and a!= 'стоп':
     print("Привет, это твой персональный помошник Адольфик")
     print("Я могу:")
@@ -10,7 +16,8 @@ while a != "Стоп" and a!= 'стоп':
     print("3. Расчитать доходность вклада")
     print("4. Перевести число из различных систем счисления в десятичную")
     print("5. Посоветовать фильм на вечер")
-    print("6. Назвать сегоднюшнюю дату")
+    print("6. Посоветовать группу и одну из её песен.")
+    print("7. Назвать сегоднюшнюю дату")
     print("Если вы хотите завершить программу напишите 'Стоп'")
     print("Введитье номер операции, которую хотите выполнить:")
     a = input()
@@ -75,6 +82,20 @@ while a != "Стоп" and a!= 'стоп':
         g = random.randint(0, len(films) - 1)
         print("Сегодня вечером я рекомендудую вам посмотреть:", films[g])
     elif int(a) == 6:
+        p = random.randint(0, len(music_band) - 1)
+        band = music_band[p]
+        if band == "Limp Bizkit":
+            song = songs_bizkit[random.randint(0, len(songs_bizkit) - 1)]
+        elif band == "Imagine Dragons":
+            song = songs_dragons[random.randint(0, len(songs_dragons) - 1)]
+        elif band == "Linkin park":
+            song = songs_park[random.randint(0, len(songs_park) - 1)]
+        elif band == "Nirvana":
+            song = songs_nirvana[random.randint(0, len(songs_nirvana) - 1)]
+        elif band == "Skillet":
+            song = songs_skillet[random.randint(0, len(songs_skillet) - 1)]
+        print("Сегодня я рекомендую вам послушать песню", song, 'замечательной группы', band)
+    elif int(a) == 7:
         current_date = date.today()
         print(current_date)
     a = input("Если хотитие продолжить и вернуться к списку операций, то введите любое число или букву, если же хотите остановится, то напишите 'Стоп'")
